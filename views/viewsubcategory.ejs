@@ -1,0 +1,39 @@
+<%- include("header")%>
+
+    <div class="content-wrapper">
+        <div class="page-header">
+        </div>
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Category Tables</h4>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Category</th>
+                                    <th>Sub-Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% let cnt=1 %>
+                                    <% allrecord.map((val)=>{
+
+                                        %>
+                                        <tr>
+                                            <td><%= cnt++ %></td>
+                                            <td><%= val.categoryId.category %></td>
+                                            <td><%= val.subcategory %></td>
+                                        </tr>
+                                        <%})%>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer')%>

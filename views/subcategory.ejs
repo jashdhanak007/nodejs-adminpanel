@@ -1,0 +1,32 @@
+<%- include("header")%>
+
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add Sub-Category</h4>
+                        <form class="forms-sample" method="post" action="/insertsubcategory">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <select name="categoryId" class="form-control my-3">
+                                        <option>---select category---</option>
+                                        <% for(let i in categorydata){ %>
+                                           <option value="<%= categorydata[i].id %>"><%=categorydata[i].category  %></option> 
+                                        <% }  %>
+                                    </select>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" name="subcategory" class="form-control"
+                                        id="exampleInputUsername2" placeholder="Enter Sub-Category">
+                                </div>
+                            </div>
+                            <input type="submit" value="submit" class="btn btn-gradient-primary me-2">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('footer')%>
